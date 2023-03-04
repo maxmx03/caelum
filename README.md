@@ -17,3 +17,10 @@ lunarvim
 git clone https://github.com/maxmx03/caelum.git ~/.config/lvim/colors
 ```
 
+```lua
+
+if hello then
+    print "Hello world"
+end
+
+```
