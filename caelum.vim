@@ -70,7 +70,7 @@ function! Hl(group, options)
     let cmd .= ' gui=strikethrough'
   endif
 
-  if has_key(a:options, 'undercurl') && a:options.undercurl
+  if has_key(a:options, 'undercurl') && a:options.undercurl && has('nvim')
     let cmd .= ' guisp=undercurl'
   endif
 
