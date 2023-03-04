@@ -17,17 +17,17 @@ let g:colors = {
       \ 'yellow':                   '#DCC68D',
       \ 'blue':                     '#677FA3',
       \ 'gray':                     '#848e8A',
-      \ 'red':                      '#C55226',
+      \ 'red':                      '#de6464',
       \ 'orange':                   '#E58538',
       \ 'brown':                    '#9F6A1F',
       \ 'purple':                   '#7B77A0',
       \ 'info':                     '#FFCF62',
       \ 'hint':                     '#1B5569',
       \ 'warn':                     '#E58538',
-      \ 'error':                    '#8D1805',
+      \ 'error':                    '#de6464',
       \ 'add':                      '#7B8F5A',
       \ 'change':                   '#E58538',
-      \ 'delete':                   '#8D1805',
+      \ 'delete':                   '#de6464',
       \ }
 
 function! Hl(group, options)
@@ -145,7 +145,7 @@ call Hl('Variable', { 'fg': 'foreground' })
 call Hl('Function', { 'fg': 'yellow' })
 call Hl('Conditional', { 'fg': 'orange', 'bold': s:true })
 call Hl('Repeat', { 'fg': 'orange', 'bold': s:true })
-call Hl('Label', { 'fg': 'orange', 'bold': s:true })
+call Hl('Label', { 'fg': 'blue', 'bold': s:true })
 call Hl('Operator', { 'fg': 'orange', 'bold': s:true })
 call Hl('Statement', { 'fg': 'orange', 'bold': s:true })
 call Hl('Keyword', { 'fg': 'orange', 'bold': s:true })
@@ -160,7 +160,7 @@ call Hl('Structure', { 'fg': 'orange', 'bold': s:true })
 call Hl('Typedef', { 'fg': 'orange', 'bold': s:true })
 call Hl('Special', { 'fg': 'purple' })
 call Hl('SpecialChar', { 'fg': 'purple' })
-call Hl('Tag', { 'fg': 'orange', 'bold': s:true })
+call Hl('Tag', { 'fg': 'red', 'bold': s:true })
 call Hl('Delimiter', { 'fg': 'foreground' })
 call Hl('SpecialComment', { 'fg': 'yellow' })
 call Hl('Underlined', { 'fg': 'purple', 'underline': s:true })
@@ -243,7 +243,7 @@ if has('nvim')
   call Lk('@text.diff.delete', 'DiffDelete')
   call Lk('@tag', 'Tag')
   call Lk('@tag.attribute', '@field')
-  call Lk('@tag.delimiter', 'Tag')
+  call Lk('@tag.delimiter', 'Keyword')
 
   " Git
   call Hl('SignAdd', { 'fg': 'add' })
