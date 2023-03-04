@@ -21,10 +21,14 @@ let g:colors = {
       \ 'orange':                   '#E58538',
       \ 'brown':                    '#9F6A1F',
       \ 'purple':                   '#7B77A0',
+      \ 'pink':                     '#F1BABD',
       \ 'info':                     '#FFCF62',
       \ 'hint':                     '#1B5569',
       \ 'warn':                     '#E58538',
       \ 'error':                    '#8D1805',
+      \ 'add':                      '#7B8F5A',
+      \ 'change':                   '#E58538',
+      \ 'delete':                   '#8D1805',
       \ }
 
 function! Hl(group, options)
@@ -88,7 +92,7 @@ call Hl('Cursor', { 'fg': 'background', 'bg': 'foreground' })
 call Lk('CursorIM', 'Cursor')
 call Hl('CursorLine', { 'bg': 'background2', 'sp': 'foreground' })
 call Lk('CursorColumn', 'CursorLine')
-call Hl('CursorLineNr', { 'fg': 'yellow' })
+call Hl('CursorLineNr', { 'fg': 'foreground', 'bg': 'background2', 'bold': s:true })
 call Hl('LineNr', { 'fg': 'foreground', 'bg': 'background2' })
 call Hl('DiffText', { 'fg': 'blue', 'reverse': 1 })
 call Hl('DiffAdd', { 'fg': 'green', 'reverse': 1 })
@@ -125,7 +129,7 @@ call Hl('SpellCap', { 'sp': 'warn', 'undercurl': s:true })
 call Hl('SpellLocal', { 'sp': 'info', 'undercurl': s:true })
 call Hl('SpellRare', { 'sp': 'hint', 'undercurl': s:true })
 call Hl('QuickFixLine', { 'bg': 'background2', 'bold': s:true })
-call Hl('Directory', { 'fg': 'yellow' })
+call Hl('Directory', { 'fg': 'orange' })
 call Hl('Question', { 'fg': 'blue' })
 call Hl('NonText', { 'fg': 'foreground', 'bg': 'background' })
 call Hl('EndOfBuffer', { 'fg': 'background' })
@@ -242,6 +246,17 @@ if has('nvim')
   call Lk('@tag.attribute', '@field')
   call Lk('@tag.delimiter', 'Tag')
 
+  " Git
+  call Hl('SignAdd', { 'fg': 'add' })
+  call Hl('SignChange', { 'fg': 'change' })
+  call Hl('SignDelete', { 'fg': 'delete' })
+  call Hl('GitSignsAdd', { 'fg': 'add' })
+  call Hl('GitSignsChange', { 'fg': 'change' })
+  call Hl('GitSignsDelete', { 'fg': 'delete' })
+  call Hl('GitGutterAdd', { 'fg': 'add' })
+  call Hl('GitGutterChange', { 'fg': 'change' })
+  call Hl('GitGutterDelete', { 'fg': 'delete' })
+
   " LSP
   call Hl('LspReferenceText', { 'bg': 'background2', 'bold': s:true })
   call Hl('LspReferenceRead', { 'bg': 'background2', 'bold': s:true })
@@ -264,4 +279,15 @@ if has('nvim')
   call Lk('DiagnosticVirtualTextInfo', 'DiagnosticInfo')
   call Lk('DiagnosticVirtualTextWarn', 'DiagnosticWarn')
   call Lk('DiagnosticVirtualTextError', 'DiagnosticError')
+
+  " NvimTree
+  call Lk('NvimTreeFolderIcon', 'Directory')
+  call Hl('NvimTreeIndentMarker', { 'fg': 'foreground' })
+  call Lk('NvimTreeNormal', 'Normal')
+  call Lk('NvimTreeNormalNC', 'NormalNC')
+  call Lk('NvimTreeWinSeparator', 'WinSeparator')
+  call Hl('NvimTreeFolderName', { 'fg': 'foreground' })
+  call Hl('NvimTreeOpenedFolderName', { 'fg': 'orange', 'bold': s:true })
+  call Lk('NvimTreeEmptyFolderName', 'Comment')
+  call Hl('NvimTreeOpenedFile', { 'bg': 'background2' })
 endif
