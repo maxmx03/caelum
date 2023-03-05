@@ -13,21 +13,22 @@ let g:colors = {
       \ 'background':               '#1F1F1F',
       \ 'background2':              '#2F2F2F',
       \ 'foreground':               '#CABEAC',
+      \ 'foreground2':              '#a09483',
       \ 'selection':                '#343341',
       \ 'green':                    '#7B8F5A',
       \ 'yellow':                   '#DCC68D',
       \ 'blue':                     '#677FA3',
       \ 'gray':                     '#848e8A',
-      \ 'grey':                     '#5e6970',
       \ 'red':                      '#de6464',
       \ 'orange':                   '#E58538',
       \ 'purple':                   '#7B77A0',
+      \ 'magenta':                  '#D885A3',
       \ 'info':                     '#FFCF62',
       \ 'hint':                     '#1B5569',
       \ 'warn':                     '#E58538',
       \ 'error':                    '#de6464',
       \ 'add':                      '#7B8F5A',
-      \ 'change':                   '#E58538',
+      \ 'change':                   '#FFCF62',
       \ 'delete':                   '#de6464',
       \ }
 
@@ -92,14 +93,14 @@ call Hl('Cursor', { 'fg': 'background', 'bg': 'foreground' })
 call Lk('CursorIM', 'Cursor')
 call Hl('CursorLine', { 'bg': 'selection', 'sp': 'foreground' })
 call Lk('CursorColumn', 'CursorLine')
-call Hl('CursorLineNr', { 'fg': 'grey', 'bg': 'selection', 'bold': s:true })
-call Hl('LineNr', { 'fg': 'grey', 'bg': 'background2' })
+call Hl('CursorLineNr', { 'fg': 'foreground2', 'bg': 'selection', 'bold': s:true })
+call Hl('LineNr', { 'fg': 'foreground2', 'bg': 'background2' })
 call Hl('DiffText', { 'fg': 'blue', 'reverse': 1 })
 call Hl('DiffAdd', { 'fg': 'green', 'reverse': 1 })
 call Hl('DiffChange', { 'fg': 'orange', 'reverse': 1 })
 call Hl('DiffDelete', { 'fg': 'red', 'reverse': 1 })
 call Hl('Pmenu', { 'fg': 'foreground', 'bg': 'background' })
-call Hl('PmenuSel', { 'bg': 'background' })
+call Hl('PmenuSel', { 'bg': 'selection' })
 call Hl('PmenuSbar', { 'bg': 'background' })
 call Hl('PmenuThumb', { 'bg': 'foreground' })
 call Hl('WildMenu', { 'bg': 'background', 'bold': s:true })
@@ -171,7 +172,7 @@ call Hl('Underlined', { 'fg': 'purple', 'underline': s:true })
 call Hl('Bold', { 'fg': 'purple', 'bold': s:true })
 call Hl('Italic', { 'fg': 'purple', 'italic': s:true })
 call Hl('Underlined', { 'fg': 'purple', 'underline': s:true })
-call Hl('Error', { 'fg': 'error' })
+call Hl('Error', { 'fg': 'error', 'bg': 'background' })
 call Hl('Title', { 'fg': 'yellow', 'bold': s:true })
 call Hl('Todo', { 'fg': 'background', 'bg': 'info', 'bold': s:true })
 call Lk('Conceal', 'Keyword')
@@ -278,6 +279,7 @@ if has('nvim')
   call Lk('DiagnosticVirtualTextError', 'DiagnosticError')
 
   " nvim-tree/nvim-tree.lua
+  call Lk('NvimTreeRootFolder', 'Directory')
   call Lk('NvimTreeFolderIcon', 'Directory')
   call Hl('NvimTreeIndentMarker', { 'fg': 'foreground' })
   call Lk('NvimTreeNormal', 'Normal')
@@ -287,9 +289,44 @@ if has('nvim')
   call Hl('NvimTreeOpenedFolderName', { 'fg': 'orange', 'bold': s:true })
   call Lk('NvimTreeEmptyFolderName', 'Comment')
   call Hl('NvimTreeOpenedFile', { 'bg': 'background2' })
+  call Lk('NvimTreeEndOfBuffer', 'EndOfBuffer')
+  call Lk('NvimTreeCursorLine', 'CursorLine')
+  call Lk('NvimTreeGitIgnored', 'Comment')
+  call Hl('NvimTreeGitStaged', { 'fg': 'add' })
+  call Hl('NvimTreeGitNew', { 'fg': 'add' })
+  call Hl('NvimTreeGitRenamed', { 'fg': 'add' })
+  call Hl('NvimTreeGitDeleted', { 'fg': 'add' })
+  call Hl('NvimTreeGitMerge', { 'fg': 'change' })
+  call Hl('NvimTreeGitDirty', { 'fg': 'change' })
+
+  " nvim-neo-tree/neo-tree.nvim
+  call Lk('NeoTreeRootName', 'NvimTreeRootFolder')
+  call Lk('NeoTreeDirectoryIcon', 'NvimTreeFolderIcon')
+  call Lk('NeoTreeIndentMarker', 'NvimTreeIndentMarker')
+  call Lk('NeoTreeNormal', 'NvimTreeNormal')
+  call Lk('NeoTreeNormalNC', 'NvimTreeNormalNC')
+  call Lk('NeoTreeWinSeparator', 'NvimTreeWinSeparator')
+  call Lk('NeoTreeDirectoryName', 'NvimTreeFolderName')
+  call Lk('NeoTreeOpenedDirectoryName', 'NvimTreeOpenedFolderName')
+  call Lk('NeoTreeHiddenByName', 'NvimTreeEmptyFolderName')
+  call Lk('NeoTreeOpenedFile', 'NvimTreeOpenedFile')
+  call Lk('NeoTreeEndOfBuffer', 'NvimTreeEndOfBuffer')
+  call Lk('NeoTreeCursorLine', 'NvimTreeCursorLine')
+  call Lk('NeoTreeGitIgnored', 'NvimTreeGitIgnored')
+  call Lk('NeoTreeGitAdded', 'NvimTreeGitStaged')
+  call Lk('NeoTreeGitConflict', 'NvimTreeGitDeleted')
+  call Lk('NeoTreeGitDeleted', 'NvimTreeGitDeleted')
+  call Lk('NeoTreeGitModified', 'NvimTreeGitDirty')
+  call Lk('NeoTreeGitUnstaged', 'NvimTreeGitUnstaged')
+  call Lk('NeoTreeGitUntracked', 'NvimTreeGitNew')
+
+  " phaazon/hop.nvim
+  call Hl('HopPreview', { 'fg': 'foreground' })
+  call Hl('HopNextKey', { 'fg': 'magenta' })
+  call Hl('HopNextKey1', { 'fg': 'blue' })
+  call Hl('HopNextKey2', { 'fg': 'purple' })
 else
   " sheerun/vim-polyglot
-
   call Lk('jsFuncCall', 'Function')
   call Lk('jsFunction', 'Keyword')
   call Lk('jsArrowFunction', 'Keyword')
