@@ -19,7 +19,6 @@ let g:colors = {
       \ 'gray':                     '#848e8A',
       \ 'red':                      '#de6464',
       \ 'orange':                   '#E58538',
-      \ 'brown':                    '#9F6A1F',
       \ 'purple':                   '#7B77A0',
       \ 'info':                     '#FFCF62',
       \ 'hint':                     '#1B5569',
@@ -134,7 +133,7 @@ call Hl('NonText', { 'fg': 'foreground', 'bg': 'background' })
 call Hl('EndOfBuffer', { 'fg': 'background' })
 
 " Code
-call Hl('Comment', { 'fg': 'brown', 'italic': 1 })
+call Hl('Comment', { 'fg': 'gray', 'italic': 1 })
 call Hl('Constant', { 'fg': 'purple' })
 call Hl('String', { 'fg': 'green' })
 call Hl('Number', { 'fg': 'purple' })
