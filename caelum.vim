@@ -244,20 +244,15 @@ if has('nvim')
   call Lk('@text.diff.delete', 'DiffDelete')
   call Lk('@tag', 'Tag')
   call Lk('@tag.attribute', '@field')
-  call Lk('@tag.delimiter', '@tag')
+  call Lk('@tag.delimiter', 'Delimiter')
 
-  " Git
+  " lewis6991 / gitsigns.nvim 
+  " airblade/vim-gitgutter
   call Hl('SignAdd', { 'fg': 'add' })
   call Hl('SignChange', { 'fg': 'change' })
   call Hl('SignDelete', { 'fg': 'delete' })
-  call Hl('GitSignsAdd', { 'fg': 'add' })
-  call Hl('GitSignsChange', { 'fg': 'change' })
-  call Hl('GitSignsDelete', { 'fg': 'delete' })
-  call Hl('GitGutterAdd', { 'fg': 'add' })
-  call Hl('GitGutterChange', { 'fg': 'change' })
-  call Hl('GitGutterDelete', { 'fg': 'delete' })
 
-  " LSP
+  " neovim / nvim-lspconfig
   call Hl('LspReferenceText', { 'bg': 'selection', 'bold': s:true })
   call Hl('LspReferenceRead', { 'bg': 'selection', 'bold': s:true })
   call Hl('LspReferenceWrite', { 'bg': 'selection', 'bold': s:true })
@@ -280,7 +275,7 @@ if has('nvim')
   call Lk('DiagnosticVirtualTextWarn', 'DiagnosticWarn')
   call Lk('DiagnosticVirtualTextError', 'DiagnosticError')
 
-  " NvimTree
+  " nvim-tree/nvim-tree.lua
   call Lk('NvimTreeFolderIcon', 'Directory')
   call Hl('NvimTreeIndentMarker', { 'fg': 'foreground' })
   call Lk('NvimTreeNormal', 'Normal')
@@ -290,4 +285,21 @@ if has('nvim')
   call Hl('NvimTreeOpenedFolderName', { 'fg': 'orange', 'bold': s:true })
   call Lk('NvimTreeEmptyFolderName', 'Comment')
   call Hl('NvimTreeOpenedFile', { 'bg': 'background2' })
-endif
+else
+  " sheerun/vim-polyglot
+  
+  call Lk('jsFuncCall', 'Function')
+  call Lk('jsFunction', 'Keyword')
+  call Lk('jsArrowFunction', 'Keyword')
+  call Lk('jsPrototype', 'Keyword')
+  call Lk('jsClassDefinition', 'Type')
+ endif
+
+" airblade/vim-gitgutter
+
+call Hl('GitSignsAdd', { 'fg': 'add' })
+call Hl('GitSignsChange', { 'fg': 'change' })
+call Hl('GitSignsDelete', { 'fg': 'delete' })
+call Hl('GitGutterAdd', { 'fg': 'add' })
+call Hl('GitGutterChange', { 'fg': 'change' })
+call Hl('GitGutterDelete', { 'fg': 'delete' })
