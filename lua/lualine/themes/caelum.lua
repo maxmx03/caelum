@@ -30,7 +30,7 @@ local caelum = {
     a = { fg = colors.orange, bg = colors.background },
   },
   command = {
-    a = { fg = colors.backgrund, bg = colors.blue },
+    a = { fg = colors.yellow, bg = colors.background },
   },
 }
 
