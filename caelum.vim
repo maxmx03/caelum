@@ -176,7 +176,7 @@ call Lk('SpecialKey', 'Special')
 call Lk('Substitute', 'IncSearch')
 
 if has('nvim')
-  " Treesitter
+  " nvim-treesitter/nvim-treesitter
   call Lk('@comment', 'Comment')
   call Lk('@error', 'Error')
   call Lk('@preproc', 'PreProc')
@@ -247,7 +247,6 @@ if has('nvim')
   call Lk('@tag.delimiter', 'Delimiter')
 
   " lewis6991 / gitsigns.nvim 
-  " airblade/vim-gitgutter
   call Hl('SignAdd', { 'fg': 'add' })
   call Hl('SignChange', { 'fg': 'change' })
   call Hl('SignDelete', { 'fg': 'delete' })
@@ -287,16 +286,15 @@ if has('nvim')
   call Hl('NvimTreeOpenedFile', { 'bg': 'background2' })
 else
   " sheerun/vim-polyglot
-  
+
   call Lk('jsFuncCall', 'Function')
   call Lk('jsFunction', 'Keyword')
   call Lk('jsArrowFunction', 'Keyword')
   call Lk('jsPrototype', 'Keyword')
   call Lk('jsClassDefinition', 'Type')
- endif
+endif
 
 " airblade/vim-gitgutter
-
 call Hl('GitSignsAdd', { 'fg': 'add' })
 call Hl('GitSignsChange', { 'fg': 'change' })
 call Hl('GitSignsDelete', { 'fg': 'delete' })
