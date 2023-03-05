@@ -1,10 +1,11 @@
-`maxmx93/caelum`
+`maxmx03/caelum`
 # Caelum 🎨
 
 Caelum is a Vim colorscheme inspired by the rich colors and intricate designs found in Catholic art during the Renaissance period, "Caelum" is a Latin word meaning "sky" or "heaven."
 
 ## Preview 👀
 
+![Captura de tela de 2023-03-05 20-19-35](https://user-images.githubusercontent.com/50273941/222991738-e8ef9860-4038-447e-87e0-d499de63fd2a.png)
 
 ## Requirements 🛠️
 
