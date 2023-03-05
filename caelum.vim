@@ -11,12 +11,14 @@ let g:colors_name = 'caelum'
 
 let g:colors = {
       \ 'background':               '#1F1F1F',
-      \ 'background2':              '#343341',  
+      \ 'background2':              '#2F2F2F',
       \ 'foreground':               '#CABEAC',
+      \ 'selection':                '#343341',
       \ 'green':                    '#7B8F5A',
       \ 'yellow':                   '#DCC68D',
       \ 'blue':                     '#677FA3',
       \ 'gray':                     '#848e8A',
+      \ 'grey':                     '#5e6970',
       \ 'red':                      '#de6464',
       \ 'orange':                   '#E58538',
       \ 'purple':                   '#7B77A0',
@@ -88,10 +90,10 @@ call Lk('NormalNC', 'Normal')
 call Hl('NormalFloat', { 'fg': 'foreground', 'bg': 'background' })
 call Hl('Cursor', { 'fg': 'background', 'bg': 'foreground' })
 call Lk('CursorIM', 'Cursor')
-call Hl('CursorLine', { 'bg': 'background2', 'sp': 'foreground' })
+call Hl('CursorLine', { 'bg': 'selection', 'sp': 'foreground' })
 call Lk('CursorColumn', 'CursorLine')
-call Hl('CursorLineNr', { 'fg': 'purple', 'bg': 'background2', 'bold': s:true })
-call Hl('LineNr', { 'fg': 'purple', 'bg': 'background' })
+call Hl('CursorLineNr', { 'fg': 'grey', 'bg': 'selection', 'bold': s:true })
+call Hl('LineNr', { 'fg': 'grey', 'bg': 'background2' })
 call Hl('DiffText', { 'fg': 'blue', 'reverse': 1 })
 call Hl('DiffAdd', { 'fg': 'green', 'reverse': 1 })
 call Hl('DiffChange', { 'fg': 'orange', 'reverse': 1 })
@@ -114,9 +116,9 @@ call Hl('Tablinesel', { 'fg': 'foreground', 'bg': 'background' })
 call Lk('Search', 'Visual')
 call Hl('IncSearch', { 'fg': 'foreground', 'bold': s:true })
 call Lk('CurSearch', 'IncSearch')
-call Hl('Visual', { 'bg': 'background2' })
+call Hl('Visual', { 'bg': 'selection' })
 call Lk('VisualNOS', 'Visual')
-call Hl('Folded', { 'fg': 'gray', 'bg': 'background2' })
+call Hl('Folded', { 'fg': 'gray', 'bg': 'selection' })
 call Lk('FoldColumn', 'Normal')
 call Lk('ColorColumn', 'CursorColumn')
 call Lk('SignColumn', 'FoldColumn')
@@ -126,7 +128,7 @@ call Hl('SpellBad', { 'sp': 'error', 'undercurl': s:true })
 call Hl('SpellCap', { 'sp': 'warn', 'undercurl': s:true })
 call Hl('SpellLocal', { 'sp': 'info', 'undercurl': s:true })
 call Hl('SpellRare', { 'sp': 'hint', 'undercurl': s:true })
-call Hl('QuickFixLine', { 'bg': 'background2', 'bold': s:true })
+call Hl('QuickFixLine', { 'bg': 'selection', 'bold': s:true })
 call Hl('Directory', { 'fg': 'orange' })
 call Hl('Question', { 'fg': 'blue' })
 call Hl('NonText', { 'fg': 'foreground', 'bg': 'background' })
@@ -256,9 +258,9 @@ if has('nvim')
   call Hl('GitGutterDelete', { 'fg': 'delete' })
 
   " LSP
-  call Hl('LspReferenceText', { 'bg': 'background2', 'bold': s:true })
-  call Hl('LspReferenceRead', { 'bg': 'background2', 'bold': s:true })
-  call Hl('LspReferenceWrite', { 'bg': 'background2', 'bold': s:true })
+  call Hl('LspReferenceText', { 'bg': 'selection', 'bold': s:true })
+  call Hl('LspReferenceRead', { 'bg': 'selection', 'bold': s:true })
+  call Hl('LspReferenceWrite', { 'bg': 'selection', 'bold': s:true })
   call Hl('DiagnosticHint', { 'fg': 'hint' })
   call Hl('DiagnosticInfo', { 'fg': 'info' })
   call Hl('DiagnosticError', { 'fg': 'error' })
