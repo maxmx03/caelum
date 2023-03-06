@@ -332,10 +332,10 @@ if has('nvim')
 
   " RRethy/vim-illuminate
   call Hl('illuminatedWord', { 'bg': 'selection' })
-  call Lk('illuminatedCurWord')
-  call Lk('IlluminatedWordText')
-  call Lk('IlluminatedWordRead')
-  call Lk('IlluminatedWordWrite')
+  call Lk('illuminatedCurWord', 'illuminatedWord')
+  call Lk('IlluminatedWordText', 'illuminatedWord')
+  call Lk('IlluminatedWordRead', 'illuminatedWord')
+  call Lk('IlluminatedWordWrite', 'illuminatedWord')
 
 " folke/zen-mode.nvim
 lua << EOF
