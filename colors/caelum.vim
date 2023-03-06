@@ -330,6 +330,13 @@ if has('nvim')
   call Hl('HopNextKey1', { 'fg': 'blue' })
   call Hl('HopNextKey2', { 'fg': 'purple' })
 
+  " RRethy/vim-illuminate
+  call Hl('illuminatedWord', { 'bg': 'selection' })
+  call Lk('illuminatedCurWord')
+  call Lk('IlluminatedWordText')
+  call Lk('IlluminatedWordRead')
+  call Lk('IlluminatedWordWrite')
+
 " folke/zen-mode.nvim
 lua << EOF
 local success, zen = pcall(require, 'zen-mode')
