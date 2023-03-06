@@ -54,15 +54,15 @@ function! Hl(group, options)
     let cmd .= ' gui=reverse'
   endif
 
-  if has_key(a:options, 'bold') && a:options.bold
+  if has_key(a:options, 'bold')
     let cmd .= ' gui=bold'
   endif
 
-  if has_key(a:options, 'italic') && a:options.italic
+  if has_key(a:options, 'italic')
     let cmd .= ' gui=italic'
   endif
 
-  if has_key(a:options, 'underline') && a:options.underline
+  if has_key(a:options, 'underline')
     let cmd .= ' gui=underline'
   endif
 
