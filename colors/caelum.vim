@@ -382,6 +382,12 @@ else
   call Lk('jsArrowFunction', 'Keyword')
   call Lk('jsPrototype', 'Keyword')
   call Lk('jsClassDefinition', 'Type')
+
+  call Lk('htmlTagName', 'Tag')
+  call Lk('htmlTag', 'Delimiter')
+  call Lk('htmlEndTag', 'Delimiter')
+  call Lk('htmlLink', 'magenta')
+  call Lk('htmlSpecialTagName', 'Tag')
 endif
 
 " airblade/vim-gitgutter
