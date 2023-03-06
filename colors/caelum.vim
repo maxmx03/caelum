@@ -394,6 +394,10 @@ else
   call Lk('cssTagName', 'Tag')
   call Lk('cssProp', 'Type')
   call Lk('cssUnitDecorators', 'String')
+
+  call Lk('jsxTagName', 'Tag')
+  call Lk('jsxTag', 'Delimiter')
+  call Lk('jsxCloseString', 'Delimiter')
 endif
 
 " airblade/vim-gitgutter
