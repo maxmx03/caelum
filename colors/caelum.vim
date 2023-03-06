@@ -382,6 +382,8 @@ else
   call Lk('jsArrowFunction', 'Keyword')
   call Lk('jsPrototype', 'Keyword')
   call Lk('jsClassDefinition', 'Type')
+  call Lk('jsObjectValue', 'Type')
+  call Lk('jsObjectKey', 'Type')
 
   call Lk('htmlTagName', 'Tag')
   call Lk('htmlTag', 'Delimiter')
