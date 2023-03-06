@@ -54,16 +54,22 @@ function! Hl(group, options)
     let cmd .= ' gui=reverse'
   endif
 
-  if has_key(a:options, 'bold')
+  if has_key(a:options, 'bold') && a:options.bold
     let cmd .= ' gui=bold'
+  else
+    let cmd .= ' gui-=bold'
   endif
 
-  if has_key(a:options, 'italic')
+  if has_key(a:options, 'italic') && a:options.italic
     let cmd .= ' gui=italic'
+  else
+    let cmd .= ' gui-=italic'
   endif
 
-  if has_key(a:options, 'underline')
+  if has_key(a:options, 'underline') && a:options.underline
     let cmd .= ' gui=underline'
+  else
+    let cmd .= ' gui-=underline'
   endif
 
   if has_key(a:options, 'sp') && a:options.sp !=# ''
@@ -72,10 +78,14 @@ function! Hl(group, options)
 
   if has_key(a:options, 'strikethrough') && a:options.strikethrough
     let cmd .= ' gui=strikethrough'
+  else
+    let cmd .= ' gui-=strikethrough'
   endif
 
   if has_key(a:options, 'undercurl') && a:options.undercurl && has('nvim')
     let cmd .= ' guisp=undercurl'
+  else
+    let cmd .= ' guisp-=undercurl'
   endif
 
   exe cmd
