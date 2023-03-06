@@ -52,33 +52,33 @@ function! Hl(group, options)
 
   if has_key(a:options, 'reverse')
     if empty(a:options.reverse)
-      let cmd .= ' guibg=NONE'
+      let cmd .= ' gui=NONE'
     else
-      let cmd .= ' guibg=' . g:colors[a:options.reverse]
+      let cmd .= ' gui=' . g:colors[a:options.reverse]
     endif
   endif
 
   if has_key(a:options, 'bold')
     if empty(a:options.bold)
-      let cmd .= ' guibg=NONE'
+      let cmd .= ' gui=NONE'
     else
-      let cmd .= ' guibg=' . g:colors[a:options.bold]
+      let cmd .= ' gui=' . g:colors[a:options.bold]
     endif
   endif
 
   if has_key(a:options, 'italic')
     if empty(a:options.italic)
-      let cmd .= ' guibg=NONE'
+      let cmd .= ' gui=NONE'
     else
-      let cmd .= ' guibg=' . g:colors[a:options.italic]
+      let cmd .= ' gui=' . g:colors[a:options.italic]
     endif
   endif
 
   if has_key(a:options, 'underline')
     if empty(a:options.underline)
-      let cmd .= ' guibg=NONE'
+      let cmd .= ' gui=NONE'
     else
-      let cmd .= ' guibg=' . g:colors[a:options.underline]
+      let cmd .= ' gui=' . g:colors[a:options.underline]
     endif
   endif
 
@@ -88,17 +88,17 @@ function! Hl(group, options)
 
   if has_key(a:options, 'strikethrough')
     if empty(a:options.strikethrough)
-      let cmd .= ' guibg=NONE'
+      let cmd .= ' gui=NONE'
     else
-      let cmd .= ' guibg=' . g:colors[a:options.strikethrough]
+      let cmd .= ' gui=' . g:colors[a:options.strikethrough]
     endif
   endif
 
   if has_key(a:options, 'undercurl')
     if empty(a:options.undercurl)
-      let cmd .= ' guibg=NONE'
+      let cmd .= ' gui=NONE'
     else
-      let cmd .= ' guibg=' . g:colors[a:options.undercurl]
+      let cmd .= ' gui=' . g:colors[a:options.undercurl]
     endif
   endif
 
