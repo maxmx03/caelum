@@ -388,6 +388,12 @@ else
   call Lk('htmlEndTag', 'Delimiter')
   call Lk('htmlLink', 'magenta')
   call Lk('htmlSpecialTagName', 'Tag')
+
+  call Hl('cssAttr', {'fg': 'magenta'})
+  call Hl('cssUrl', { 'fg': 'magenta' })
+  call Lk('cssTagName', 'Tag')
+  call Lk('cssProp', 'Type')
+  call Lk('cssUnitDecorators', 'String')
 endif
 
 " airblade/vim-gitgutter
