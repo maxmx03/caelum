@@ -12,12 +12,15 @@ let g:colors_name = 'caelum'
 let g:colors = {
       \ 'background':               '#1F1F1F',
       \ 'background2':              '#2F2F2F',
+      \ 'background3':              '#1E1D29',
       \ 'foreground':               '#CABEAC',
       \ 'foreground2':              '#a09483',
+      \ 'foreground3':              '#565561',
       \ 'selection':                '#343341',
       \ 'green':                    '#7B8F5A',
       \ 'yellow':                   '#DCC68D',
       \ 'blue':                     '#677FA3',
+      \ 'cyan':                     '#348899',
       \ 'gray':                     '#848e8A',
       \ 'red':                      '#de6464',
       \ 'orange':                   '#E58538',
@@ -93,7 +96,7 @@ call Hl('Cursor', { 'fg': 'background', 'bg': 'foreground' })
 call Lk('CursorIM', 'Cursor')
 call Hl('CursorLine', { 'bg': 'selection', 'sp': 'foreground' })
 call Lk('CursorColumn', 'CursorLine')
-call Hl('CursorLineNr', { 'fg': 'foreground2', 'bg': 'selection', 'bold': s:true })
+call Hl('CursorLineNr', { 'fg': 'foreground2', 'bg': 'background2', 'bold': s:true })
 call Hl('LineNr', { 'fg': 'foreground2', 'bg': 'background2' })
 call Hl('DiffText', { 'fg': 'blue', 'reverse': 1 })
 call Hl('DiffAdd', { 'fg': 'green', 'reverse': 1 })
@@ -126,6 +129,7 @@ call Lk('FoldColumn', 'NormalNC')
 call Lk('ColorColumn', 'CursorColumn')
 call Lk('SignColumn', 'LineNr')
 call Hl('WinSeparator', { 'fg': 'background' })
+call Hl('VertSplit', { 'fg': 'background' })
 call Lk('VertSplit', 'WinSeparator')
 call Lk('FloatBorder', 'WinSeparator')
 call Hl('SpellBad', { 'sp': 'error', 'undercurl': s:true })
@@ -147,7 +151,7 @@ call Hl('Boolean', { 'fg': 'purple' })
 call Hl('Float', { 'fg': 'purple' })
 call Hl('Identifier', { 'fg': 'red' })
 call Hl('Variable', { 'fg': 'foreground' })
-call Hl('Function', { 'fg': 'red' })
+call Hl('Function', { 'fg': 'blue' })
 call Hl('Conditional', { 'fg': 'orange', 'bold': s:true })
 call Hl('Repeat', { 'fg': 'orange', 'bold': s:true })
 call Hl('Label', { 'fg': 'blue', 'bold': s:true })
@@ -167,13 +171,13 @@ call Hl('Special', { 'fg': 'purple' })
 call Hl('SpecialChar', { 'fg': 'purple' })
 call Hl('Tag', { 'fg': 'purple', 'bold': s:true })
 call Hl('Delimiter', { 'fg': 'foreground' })
-call Hl('SpecialComment', { 'fg': 'yellow' })
+call Hl('SpecialComment', { 'fg': 'magenta' })
 call Hl('Underlined', { 'fg': 'purple', 'underline': s:true })
 call Hl('Bold', { 'fg': 'purple', 'bold': s:true })
 call Hl('Italic', { 'fg': 'purple', 'italic': s:true })
 call Hl('Underlined', { 'fg': 'purple', 'underline': s:true })
 call Hl('Error', { 'fg': 'error', 'bg': 'background' })
-call Hl('Title', { 'fg': 'yellow', 'bold': s:true })
+call Hl('Title', { 'fg': 'orange', 'bold': s:true })
 call Hl('Todo', { 'fg': 'background', 'bg': 'info', 'bold': s:true })
 call Lk('Conceal', 'Keyword')
 call Lk('SpecialKey', 'Special')
@@ -200,8 +204,8 @@ if has('nvim')
   call Lk('@function', 'Function')
   call Lk('@function.call', 'Function')
   call Lk('@function.builtin', 'Function')
-  call Hl('@method', { 'fg': 'red' })
-  call Hl('@method.call', { 'fg': 'red' })
+  call Lk('@method', 'Function')
+  call Lk('@method.call', 'Function')
   call Lk('@constructor', '@method')
   call Hl('@parameter', { 'fg': 'foreground', 'italic': s:true })
   call Lk('@keyword', 'Keyword')
@@ -222,7 +226,7 @@ if has('nvim')
   call Lk('@storageclass', 'StorageClass')
   call Lk('@attribute', 'Keyword')
   call Hl('@field', { 'fg': 'blue' })
-  call Lk('@property', '@field')
+  call Hl('@property', { 'fg': 'yellow' })
   call Lk('@variable', 'Variable')
   call Lk('@variable.builtin', 'Constant')
   call Lk('@constant', 'Constant')
@@ -237,7 +241,7 @@ if has('nvim')
   call Hl('@text.strike', { 'strikethrough': s:true })
   call Lk('@text.title', 'Title')
   call Lk('@text.literal', 'String')
-  call Hl('@text.uri', { 'fg': 'yellow', 'underline': s:true })
+  call Hl('@text.uri', { 'fg': 'magenta', 'underline': s:true })
   call Lk('@text.math', 'Special' )
   call Lk('@text.reference', '@text.uri')
   call Lk('@text.todo', 'Title')
@@ -325,6 +329,45 @@ if has('nvim')
   call Hl('HopNextKey', { 'fg': 'magenta' })
   call Hl('HopNextKey1', { 'fg': 'blue' })
   call Hl('HopNextKey2', { 'fg': 'purple' })
+
+" folke/zen-mode.nvim
+lua << EOF
+local success, zen = pcall(require, 'zen-mode')
+
+if not success then
+  return
+end
+
+zen.setup {
+  on_open = function()
+    vim.cmd [[
+      call Hl('Normal', { 'fg': 'foreground', 'bg': 'background3'})
+      call Hl('CursorLineNr', { 'fg': 'foreground3', 'bg': 'background3', 'bold': 1 })
+      call Hl('LineNr', { 'fg': 'foreground3', 'bg': 'background3' })
+      call Hl('ZenBg', { 'fg': 'foreground3', 'bg': 'background3' })
+      call Hl('GitSignsAdd', { 'fg': 'add', 'bg': 'background3' })
+      call Hl('GitSignsChange', { 'fg': 'change', 'bg': 'background3' })
+      call Hl('GitSignsDelete', { 'fg': 'delete', 'bg': 'background3' })
+      call Hl('GitGutterAdd', { 'fg': 'add', 'bg': 'background3' })
+      call Hl('GitGutterChange', { 'fg': 'change', 'bg': 'background3' })
+      call Hl('GitGutterDelete', { 'fg': 'delete', 'bg': 'background3' })
+    ]]
+  end,
+  on_close = function()
+    vim.cmd [[
+      call Hl('Normal', { 'fg': 'foreground', 'bg': 'background'})
+      call Hl('CursorLineNr', { 'fg': 'foreground2', 'bg': 'background2', 'bold': 1 })
+      call Hl('LineNr', { 'fg': 'foreground2', 'bg': 'background2' })
+      call Hl('GitSignsAdd', { 'fg': 'add', 'bg': 'background2' })
+      call Hl('GitSignsChange', { 'fg': 'change', 'bg': 'background2' })
+      call Hl('GitSignsDelete', { 'fg': 'delete', 'bg': 'background2' })
+      call Hl('GitGutterAdd', { 'fg': 'add', 'bg': 'background2' })
+      call Hl('GitGutterChange', { 'fg': 'change', 'bg': 'background2' })
+      call Hl('GitGutterDelete', { 'fg': 'delete', 'bg': 'background2' })
+    ]]
+  end,
+}
+EOF
 else
   " sheerun/vim-polyglot
   call Lk('jsFuncCall', 'Function')
@@ -335,9 +378,9 @@ else
 endif
 
 " airblade/vim-gitgutter
-call Hl('GitSignsAdd', { 'fg': 'add' })
-call Hl('GitSignsChange', { 'fg': 'change' })
-call Hl('GitSignsDelete', { 'fg': 'delete' })
-call Hl('GitGutterAdd', { 'fg': 'add' })
-call Hl('GitGutterChange', { 'fg': 'change' })
-call Hl('GitGutterDelete', { 'fg': 'delete' })
+call Hl('GitSignsAdd', { 'fg': 'add', 'bg': 'background2' })
+call Hl('GitSignsChange', { 'fg': 'change', 'bg': 'background2' })
+call Hl('GitSignsDelete', { 'fg': 'delete', 'bg': 'background2' })
+call Hl('GitGutterAdd', { 'fg': 'add', 'bg': 'background2' })
+call Hl('GitGutterChange', { 'fg': 'change', 'bg': 'background2' })
+call Hl('GitGutterDelete', { 'fg': 'delete', 'bg': 'background2' })
