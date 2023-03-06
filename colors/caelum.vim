@@ -50,42 +50,56 @@ function! Hl(group, options)
     endif
   endif
 
-  if has_key(a:options, 'reverse') && a:options.reverse
-    let cmd .= ' gui=reverse'
+  if has_key(a:options, 'reverse')
+    if empty(a:options.reverse)
+      let cmd .= ' guibg=NONE'
+    else
+      let cmd .= ' guibg=' . g:colors[a:options.reverse]
+    endif
   endif
 
-  if has_key(a:options, 'bold') && a:options.bold
-    let cmd .= ' gui=bold'
-  else
-    let cmd .= ' gui-=bold'
+  if has_key(a:options, 'bold')
+    if empty(a:options.bold)
+      let cmd .= ' guibg=NONE'
+    else
+      let cmd .= ' guibg=' . g:colors[a:options.bold]
+    endif
   endif
 
-  if has_key(a:options, 'italic') && a:options.italic
-    let cmd .= ' gui=italic'
-  else
-    let cmd .= ' gui-=italic'
+  if has_key(a:options, 'italic')
+    if empty(a:options.italic)
+      let cmd .= ' guibg=NONE'
+    else
+      let cmd .= ' guibg=' . g:colors[a:options.italic]
+    endif
   endif
 
-  if has_key(a:options, 'underline') && a:options.underline
-    let cmd .= ' gui=underline'
-  else
-    let cmd .= ' gui-=underline'
+  if has_key(a:options, 'underline')
+    if empty(a:options.underline)
+      let cmd .= ' guibg=NONE'
+    else
+      let cmd .= ' guibg=' . g:colors[a:options.underline]
+    endif
   endif
 
   if has_key(a:options, 'sp') && a:options.sp !=# ''
     let cmd .= ' guisp=' . g:colors[a:options.sp]
   endif
 
-  if has_key(a:options, 'strikethrough') && a:options.strikethrough
-    let cmd .= ' gui=strikethrough'
-  else
-    let cmd .= ' gui-=strikethrough'
+  if has_key(a:options, 'strikethrough')
+    if empty(a:options.strikethrough)
+      let cmd .= ' guibg=NONE'
+    else
+      let cmd .= ' guibg=' . g:colors[a:options.strikethrough]
+    endif
   endif
 
-  if has_key(a:options, 'undercurl') && a:options.undercurl && has('nvim')
-    let cmd .= ' guisp=undercurl'
-  else
-    let cmd .= ' guisp-=undercurl'
+  if has_key(a:options, 'undercurl')
+    if empty(a:options.undercurl)
+      let cmd .= ' guibg=NONE'
+    else
+      let cmd .= ' guibg=' . g:colors[a:options.undercurl]
+    endif
   endif
 
   exe cmd
