@@ -22,7 +22,7 @@ let g:colors = {
       \ 'orange':                   '#E58538',
       \ 'purple':                   '#7B77A0',
       \ 'magenta':                  '#D885A3',
-      \ 'info':                     '#1B5569',
+      \ 'info':                     '#5B8F5A',
       \ 'hint':                     '#FFCF62',
       \ 'warn':                     '#E58538',
       \ 'error':                    '#de6464',
