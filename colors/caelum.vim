@@ -11,15 +11,13 @@ let g:colors_name = 'caelum'
 
 let g:colors = {
       \ 'background':               '#1F1F1F',
-      \ 'background2':              '#2F2F2F',
       \ 'foreground':               '#CABEAC',
-      \ 'foreground2':              '#a09483',
       \ 'selection':                '#343341',
       \ 'green':                    '#7B8F5A',
       \ 'yellow':                   '#DCC68D',
       \ 'blue':                     '#677FA3',
       \ 'cyan':                     '#348899',
-      \ 'gray':                     '#848e8A',
+      \ 'gray':                     '#5e5e5e',
       \ 'red':                      '#de6464',
       \ 'orange':                   '#E58538',
       \ 'purple':                   '#7B77A0',
@@ -112,14 +110,14 @@ let s:false = 0
 
 " Editor
 call Hl('Normal', { 'fg': 'foreground', 'bg': 'background'})
-call Hl('NormalNC', { 'fg': 'foreground2', 'bg': 'background2' })
+call Lk('Normal', 'NormalNC')
 call Hl('NormalFloat', { 'fg': 'foreground', 'bg': 'background' })
 call Hl('Cursor', { 'fg': 'background', 'bg': 'foreground' })
 call Lk('CursorIM', 'Cursor')
 call Hl('CursorLine', { 'bg': 'selection', 'sp': 'foreground' })
 call Lk('CursorColumn', 'CursorLine')
-call Hl('CursorLineNr', { 'fg': 'foreground2', 'bg': 'background2', 'bold': s:true })
-call Hl('LineNr', { 'fg': 'foreground2', 'bg': 'background2' })
+call Hl('CursorLineNr', { 'fg': 'foreground', 'bg': 'background' })
+call Hl('LineNr', { 'fg': 'gray', 'bg': 'background' })
 call Hl('DiffText', { 'fg': 'blue', 'reverse': 1 })
 call Hl('DiffAdd', { 'fg': 'green', 'reverse': 1 })
 call Hl('DiffChange', { 'fg': 'orange', 'reverse': 1 })
@@ -150,7 +148,7 @@ call Hl('Folded', { 'fg': 'gray', 'bg': 'selection' })
 call Lk('FoldColumn', 'NormalNC')
 call Lk('ColorColumn', 'CursorColumn')
 call Lk('SignColumn', 'LineNr')
-call Hl('WinSeparator', { 'fg': 'background' })
+call Hl('WinSeparator', { 'fg': 'foreground' })
 call Hl('VertSplit', { 'fg': 'background' })
 call Lk('VertSplit', 'WinSeparator')
 call Lk('FloatBorder', 'WinSeparator')
@@ -173,7 +171,7 @@ call Hl('Boolean', { 'fg': 'purple' })
 call Hl('Float', { 'fg': 'purple' })
 call Hl('Identifier', { 'fg': 'blue' })
 call Hl('Variable', { 'fg': 'foreground' })
-call Hl('Function', { 'fg': 'blue' })
+call Hl('Function', { 'fg': 'cyan' })
 call Hl('Conditional', { 'fg': 'orange'})
 call Hl('Repeat', { 'fg': 'orange'})
 call Hl('Label', { 'fg': 'blue'})
@@ -314,7 +312,6 @@ if has('nvim')
   call Hl('NvimTreeFolderName', { 'fg': 'foreground' })
   call Hl('NvimTreeOpenedFolderName', { 'fg': 'orange', 'bold': s:true })
   call Lk('NvimTreeEmptyFolderName', 'Comment')
-  call Hl('NvimTreeOpenedFile', { 'bg': 'background2' })
   call Lk('NvimTreeEndOfBuffer', 'EndOfBuffer')
   call Lk('NvimTreeCursorLine', 'CursorLine')
   call Lk('NvimTreeGitIgnored', 'Comment')
@@ -335,7 +332,6 @@ if has('nvim')
   call Lk('NeoTreeDirectoryName', 'NvimTreeFolderName')
   call Lk('NeoTreeOpenedDirectoryName', 'NvimTreeOpenedFolderName')
   call Lk('NeoTreeHiddenByName', 'NvimTreeEmptyFolderName')
-  call Lk('NeoTreeOpenedFile', 'NvimTreeOpenedFile')
   call Lk('NeoTreeEndOfBuffer', 'NvimTreeEndOfBuffer')
   call Lk('NeoTreeCursorLine', 'NvimTreeCursorLine')
   call Lk('NeoTreeGitIgnored', 'NvimTreeGitIgnored')
@@ -357,7 +353,25 @@ if has('nvim')
   call Lk('illuminatedCurWord', 'illuminatedWord')
   call Lk('IlluminatedWordText', 'illuminatedWord')
   call Lk('IlluminatedWordRead', 'illuminatedWord')
-  call Lk('IlluminatedWordWrite', 'illuminatedWord') 
+  call Lk('IlluminatedWordWrite', 'illuminatedWord')
+
+  " rcarriga/nvim-notify
+  call Hl('NotifyBackground', { 'bg': 'background' })
+  call Hl('NotifyERRORBorder', { 'fg': 'error' })
+  call Hl('NotifyWARNBorder', { 'fg': 'warn' })
+  call Hl('NotifyINFOBorder', { 'fg': 'info' })
+  call Hl('NotifyDEBUGBorder', { 'fg': 'purple' })
+  call Hl('NotifyTRACEBorder', { 'fg': 'purple' })
+  call Lk('NotifyERRORIcon', 'NotifyERRORBorder')
+  call Lk('NotifyWARNIcon', 'NotifyWARNBorder')
+  call Lk('NotifyINFOIcon', 'NotifyINFOBorder')
+  call Lk('NotifyDEBUGIcon', 'NotifyDEBUGBorder')
+  call Lk('NotifyTRACEIcon', 'NotifyTRACEBorder')
+  call Lk('NotifyERRORTitle', 'NotifyERRORBorder')
+  call Lk('NotifyWARNTitle', 'NotifyWARNBorder')
+  call Lk('NotifyINFOTitle', 'NotifyINFOBorder')
+  call Lk('NotifyDEBUGTitle', 'NotifyDEBUGBorder')
+  call Lk('NotifyTRACETitle', 'NotifyTRACEBorder')
 else
   " sheerun/vim-polyglot
 
@@ -422,9 +436,9 @@ else
 endif
 
 " airblade/vim-gitgutter
-call Hl('GitSignsAdd', { 'fg': 'add', 'bg': 'background2' })
-call Hl('GitSignsChange', { 'fg': 'change', 'bg': 'background2' })
-call Hl('GitSignsDelete', { 'fg': 'delete', 'bg': 'background2' })
-call Hl('GitGutterAdd', { 'fg': 'add', 'bg': 'background2' })
-call Hl('GitGutterChange', { 'fg': 'change', 'bg': 'background2' })
-call Hl('GitGutterDelete', { 'zfg': 'delete', 'bg': 'background2' })
+call Hl('GitSignsAdd', { 'fg': 'add', 'bg': 'background' })
+call Hl('GitSignsChange', { 'fg': 'change', 'bg': 'background' })
+call Hl('GitSignsDelete', { 'fg': 'delete', 'bg': 'background' })
+call Hl('GitGutterAdd', { 'fg': 'add', 'bg': 'background' })
+call Hl('GitGutterChange', { 'fg': 'change', 'bg': 'background' })
+call Hl('GitGutterDelete', { 'zfg': 'delete', 'bg': 'background' })
