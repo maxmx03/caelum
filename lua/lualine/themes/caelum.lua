@@ -1,8 +1,6 @@
 local colors = {
   background = '#1F1F1F',
-  background2 = '#2F2F2F',
   foreground = '#CABEAC',
-  foreground2 = '#a09483',
   green = '#7B8F5A',
   yellow = '#DCC68D',
   blue = '#677FA3',
@@ -16,8 +14,8 @@ local colors = {
 local caelum = {
   normal = {
     a = { fg = colors.blue, bg = colors.background, gui = 'bold' },
-    b = { fg = colors.foreground2, bg = colors.background2 },
-    c = { fg = colors.foreground2, bg = colors.background2 },
+    b = { fg = colors.foreground, bg = colors.background },
+    c = { fg = colors.foreground, bg = colors.background },
     z = { fg = colors.blue, bg = colors.background },
   },
   insert = {
