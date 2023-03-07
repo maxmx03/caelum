@@ -411,12 +411,23 @@ else
   call Lk('jsObjectValue', 'Identifier')
   call Lk('jsObjectKey', 'Identifier')
 
+  " typescript
+  call Lk('typescriptImport', 'Keyword')
+  call Lk('typescriptBraces', 'Delimiter')
+  call Lk('typescriptVariable', 'Keyword')
+  call Lk('typescriptMember', 'Function')
+  call Lk('typescriptIdentifier', 'Constant')
+  call Lk('typescriptInterfaceName', 'Type')
+  call Lk('typescriptAliasDeclaration', 'Type')
+  call Lk('typescriptEndColons', 'Delimiter')
+
   " html
   call Lk('htmlTagName', 'Tag')
   call Lk('htmlTag', 'Delimiter')
   call Lk('htmlEndTag', 'Delimiter')
   call Lk('htmlLink', 'magenta')
   call Lk('htmlSpecialTagName', 'Tag')
+  call Lk('htmlScriptTag', 'Tag')
 
   " css
   call Hl('cssAttr', {'fg': 'magenta'})
@@ -442,6 +453,7 @@ else
   call Lk('luaFunc', 'Function')
   call Lk('luaBuiltin', 'Constant')
   call Lk('luaTable', 'Identifier')
+  call Lk('luaGoto', 'Keyword')
 endif
 
 " airblade/vim-gitgutter
