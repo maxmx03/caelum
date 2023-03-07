@@ -360,45 +360,6 @@ if has('nvim')
   call Lk('IlluminatedWordText', 'illuminatedWord')
   call Lk('IlluminatedWordRead', 'illuminatedWord')
   call Lk('IlluminatedWordWrite', 'illuminatedWord') 
-
-" folke/zen-mode.nvim
-lua << EOF
-local success, zen = pcall(require, 'zen-mode')
-
-if not success then
-  return
-end
-
-zen.setup {
-  on_open = function()
-    vim.cmd [[
-      call Hl('Normal', { 'fg': 'foreground', 'bg': 'background3'})
-      call Hl('CursorLineNr', { 'fg': 'foreground3', 'bg': 'background3', 'bold': 1 })
-      call Hl('LineNr', { 'fg': 'foreground3', 'bg': 'background3' })
-      call Hl('ZenBg', { 'fg': 'foreground3', 'bg': 'background3' })
-      call Hl('GitSignsAdd', { 'fg': 'add', 'bg': 'background3' })
-      call Hl('GitSignsChange', { 'fg': 'change', 'bg': 'background3' })
-      call Hl('GitSignsDelete', { 'fg': 'delete', 'bg': 'background3' })
-      call Hl('GitGutterAdd', { 'fg': 'add', 'bg': 'background3' })
-      call Hl('GitGutterChange', { 'fg': 'change', 'bg': 'background3' })
-      call Hl('GitGutterDelete', { 'fg': 'delete', 'bg': 'background3' })
-    ]]
-  end,
-  on_close = function()
-    vim.cmd [[
-      call Hl('Normal', { 'fg': 'foreground', 'bg': 'background'})
-      call Hl('CursorLineNr', { 'fg': 'foreground2', 'bg': 'background2', 'bold': 1 })
-      call Hl('LineNr', { 'fg': 'foreground2', 'bg': 'background2' })
-      call Hl('GitSignsAdd', { 'fg': 'add', 'bg': 'background2' })
-      call Hl('GitSignsChange', { 'fg': 'change', 'bg': 'background2' })
-      call Hl('GitSignsDelete', { 'fg': 'delete', 'bg': 'background2' })
-      call Hl('GitGutterAdd', { 'fg': 'add', 'bg': 'background2' })
-      call Hl('GitGutterChange', { 'fg': 'change', 'bg': 'background2' })
-      call Hl('GitGutterDelete', { 'fg': 'delete', 'bg': 'background2' })
-    ]]
-  end,
-}
-EOF
 else
   " sheerun/vim-polyglot
 
