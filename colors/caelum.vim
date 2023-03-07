@@ -417,9 +417,13 @@ else
   call Lk('typescriptVariable', 'Keyword')
   call Lk('typescriptMember', 'Function')
   call Lk('typescriptIdentifier', 'Constant')
+  call Lk('typescriptIdentifierName', 'Type')
   call Lk('typescriptInterfaceName', 'Type')
   call Lk('typescriptAliasDeclaration', 'Type')
   call Lk('typescriptEndColons', 'Delimiter')
+  call Lk('typescriptGlobal', 'Constant')
+  call Lk('typescriptConsoleMethod', 'Function')
+  call Lk('typescriptOperator', 'Operator')
 
   " html
   call Lk('htmlTagName', 'Tag')
