@@ -359,7 +359,7 @@ if has('nvim')
   call Lk('illuminatedCurWord', 'illuminatedWord')
   call Lk('IlluminatedWordText', 'illuminatedWord')
   call Lk('IlluminatedWordRead', 'illuminatedWord')
-  call Lk('IlluminatedWordWrite', 'illuminatedWord')
+  call Lk('IlluminatedWordWrite', 'illuminatedWord') 
 
 " folke/zen-mode.nvim
 lua << EOF
@@ -401,29 +401,47 @@ zen.setup {
 EOF
 else
   " sheerun/vim-polyglot
+
+  " javascript
   call Lk('jsFuncCall', 'Function')
   call Lk('jsFunction', 'Keyword')
   call Lk('jsArrowFunction', 'Keyword')
   call Lk('jsPrototype', 'Keyword')
-  call Lk('jsClassDefinition', 'Type')
-  call Lk('jsObjectValue', 'Type')
-  call Lk('jsObjectKey', 'Type')
+  call Lk('jsClassDefinition', 'Identifier')
+  call Lk('jsObjectValue', 'Identifier')
+  call Lk('jsObjectKey', 'Identifier')
 
+  " html
   call Lk('htmlTagName', 'Tag')
   call Lk('htmlTag', 'Delimiter')
   call Lk('htmlEndTag', 'Delimiter')
   call Lk('htmlLink', 'magenta')
   call Lk('htmlSpecialTagName', 'Tag')
 
+  " css
   call Hl('cssAttr', {'fg': 'magenta'})
   call Hl('cssUrl', { 'fg': 'magenta' })
   call Lk('cssTagName', 'Tag')
-  call Lk('cssProp', 'Type')
+  call Lk('cssProp', 'Identifier')
   call Lk('cssUnitDecorators', 'String')
 
+  " javascriptreact
   call Lk('jsxTagName', 'Tag')
   call Lk('jsxTag', 'Delimiter')
   call Lk('jsxCloseString', 'Delimiter')
+
+  " vimscript
+  call Lk('vimFunc', 'Function')
+  call Lk('vimUserFunc', 'Function')
+  call Lk('vimVar', 'Variable')
+  call Lk('vimOption', 'Constant')
+
+  " lua
+  call Lk('luaLocal', 'Keyword')
+  call Lk('luaFuncKeyword', 'Keyword')
+  call Lk('luaFunc', 'Function')
+  call Lk('luaBuiltin', 'Constant')
+  call Lk('luaTable', 'Identifier')
 endif
 
 " airblade/vim-gitgutter
@@ -432,4 +450,4 @@ call Hl('GitSignsChange', { 'fg': 'change', 'bg': 'background2' })
 call Hl('GitSignsDelete', { 'fg': 'delete', 'bg': 'background2' })
 call Hl('GitGutterAdd', { 'fg': 'add', 'bg': 'background2' })
 call Hl('GitGutterChange', { 'fg': 'change', 'bg': 'background2' })
-call Hl('GitGutterDelete', { 'fg': 'delete', 'bg': 'background2' })
+call Hl('GitGutterDelete', { 'zfg': 'delete', 'bg': 'background2' })
