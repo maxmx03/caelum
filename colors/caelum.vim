@@ -417,7 +417,7 @@ else
   call Lk('typescriptVariable', 'Keyword')
   call Lk('typescriptMember', 'Function')
   call Lk('typescriptIdentifier', 'Constant')
-  call Lk('typescriptIdentifierName', 'Type')
+  call Hl('typescriptIdentifierName', { 'fg': 'blue' })
   call Lk('typescriptInterfaceName', 'Type')
   call Lk('typescriptAliasDeclaration', 'Type')
   call Lk('typescriptEndColons', 'Delimiter')
