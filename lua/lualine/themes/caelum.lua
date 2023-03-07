@@ -24,7 +24,7 @@ local caelum = {
     a = { fg = colors.green, bg = colors.background },
   },
   visual = {
-    a = { fg = colors.purple, bg = colors.backgrund },
+    a = { fg = colors.purple, bg = colors.background },
   },
   replace = {
     a = { fg = colors.orange, bg = colors.background },

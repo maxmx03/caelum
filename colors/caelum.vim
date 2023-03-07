@@ -12,10 +12,8 @@ let g:colors_name = 'caelum'
 let g:colors = {
       \ 'background':               '#1F1F1F',
       \ 'background2':              '#2F2F2F',
-      \ 'background3':              '#1E1D29',
       \ 'foreground':               '#CABEAC',
       \ 'foreground2':              '#a09483',
-      \ 'foreground3':              '#565561',
       \ 'selection':                '#343341',
       \ 'green':                    '#7B8F5A',
       \ 'yellow':                   '#DCC68D',
