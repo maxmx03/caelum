@@ -424,6 +424,7 @@ else
   call Lk('typescriptGlobal', 'Constant')
   call Lk('typescriptConsoleMethod', 'Function')
   call Lk('typescriptOperator', 'Operator')
+  call Lk('typescriptClassName', 'Type')
 
   " html
   call Lk('htmlTagName', 'Tag')
