@@ -1,4 +1,4 @@
-if exists('g:colors_name') 
+if exists('s:colors_name') 
   hi clear
 endif
 
@@ -7,9 +7,9 @@ if exists('g:syntax_on')
 endif
 
 set termguicolors
-let g:colors_name = 'caelum'
+let s:colors_name = 'caelum'
 
-let g:colors = {
+let s:colors = {
       \ 'background':               '#1F1F1F',
       \ 'foreground':               '#CABEAC',
       \ 'selection':                '#343341',
@@ -35,14 +35,14 @@ function! Hl(group, options)
   let cmd = 'hi! ' . a:group
 
   if has_key(a:options, 'fg') && a:options.fg !=# ''
-    let cmd .= ' guifg=' . g:colors[a:options.fg]
+    let cmd .= ' guifg=' . s:colors[a:options.fg]
   endif
 
   if has_key(a:options, 'bg')
     if empty(a:options.bg)
       let cmd .= ' guibg=NONE'
     else
-      let cmd .= ' guibg=' . g:colors[a:options.bg]
+      let cmd .= ' guibg=' . s:colors[a:options.bg]
     endif
   endif
 
@@ -79,7 +79,7 @@ function! Hl(group, options)
   endif
 
   if has_key(a:options, 'sp') && a:options.sp !=# ''
-    let cmd .= ' guisp=' . g:colors[a:options.sp]
+    let cmd .= ' guisp=' . s:colors[a:options.sp]
   endif
 
   if has_key(a:options, 'strikethrough')
