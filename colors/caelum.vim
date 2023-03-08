@@ -380,6 +380,7 @@ if has('nvim')
   " folke/which-key.nvim
   call Hl('WhichKey', { 'fg': 'yellow' })
   call Hl('WhichKeyValue', { 'fg': 'purple' })
+  call Hl('WhichKeySeparator', { 'fg': 'purple' })
   call Hl('WhichKeyDesc', { 'fg': 'foreground' })
 else
   " sheerun/vim-polyglot
