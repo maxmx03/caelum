@@ -12,10 +12,10 @@ let s:colors_name = 'caelum'
 let s:colors = {
       \ 'background':               '#22211E',
       \ 'float_background':         '#1f1e1b',
-      \ 'foreground':               '#CABEAC',
+      \ 'foreground':               '#DCC68D',
       \ 'selection':                '#3a3833',
       \ 'green':                    '#7B8F5A',
-      \ 'yellow':                   '#DCC68D',
+      \ 'yellow':                   '#FFCF62',
       \ 'blue':                     '#677FA3',
       \ 'gray':                     '#57554d',
       \ 'red':                      '#de6464',
@@ -110,7 +110,7 @@ let s:false = 0
 
 " Editor
 call Hl('Normal', { 'fg': 'foreground', 'bg': 'background'})
-call Lk('Normal', 'NormalNC')
+call Lk('NormalNC', 'Normal')
 call Hl('NormalFloat', { 'fg': 'foreground', 'bg': 'float_background' })
 call Hl('Cursor', { 'fg': 'background', 'bg': 'foreground' })
 call Lk('CursorIM', 'Cursor')
@@ -170,7 +170,7 @@ call Hl('Boolean', { 'fg': 'purple' })
 call Hl('Float', { 'fg': 'purple' })
 call Hl('Identifier', { 'fg': 'blue' })
 call Hl('Variable', { 'fg': 'foreground' })
-call Hl('Function', { 'fg': 'magenta' })
+call Hl('Function', { 'fg': 'yellow' })
 call Hl('Conditional', { 'fg': 'orange'})
 call Hl('Repeat', { 'fg': 'orange'})
 call Hl('Label', { 'fg': 'blue'})
