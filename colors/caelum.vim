@@ -378,7 +378,7 @@ if has('nvim')
   call Lk('TelescopeBorder', 'WinSeparator')
 
   " folke/which-key.nvim
-  call Hl('WhichKey', { 'fg': 'yellow' })
+  call Hl('WhichKey', { 'fg': 'blue' })
   call Hl('WhichKeyValue', { 'fg': 'purple' })
   call Hl('WhichKeySeparator', { 'fg': 'purple' })
   call Hl('WhichKeyDesc', { 'fg': 'foreground' })
