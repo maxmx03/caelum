@@ -10,14 +10,14 @@ set termguicolors
 let s:colors_name = 'caelum'
 
 let s:colors = {
-      \ 'background':               '#1F1F1F',
+      \ 'background':               '#22211E',
+      \ 'float_background':         '#1f1e1b',
       \ 'foreground':               '#CABEAC',
-      \ 'selection':                '#343341',
+      \ 'selection':                '#3a3833',
       \ 'green':                    '#7B8F5A',
       \ 'yellow':                   '#DCC68D',
       \ 'blue':                     '#677FA3',
-      \ 'cyan':                     '#348899',
-      \ 'gray':                     '#5e5e5e',
+      \ 'gray':                     '#57554d',
       \ 'red':                      '#de6464',
       \ 'orange':                   '#E58538',
       \ 'purple':                   '#7B77A0',
@@ -111,7 +111,7 @@ let s:false = 0
 " Editor
 call Hl('Normal', { 'fg': 'foreground', 'bg': 'background'})
 call Lk('Normal', 'NormalNC')
-call Hl('NormalFloat', { 'fg': 'foreground', 'bg': 'background' })
+call Hl('NormalFloat', { 'fg': 'foreground', 'bg': 'float_background' })
 call Hl('Cursor', { 'fg': 'background', 'bg': 'foreground' })
 call Lk('CursorIM', 'Cursor')
 call Hl('CursorLine', { 'bg': 'selection', 'sp': 'foreground' })
@@ -148,8 +148,7 @@ call Hl('Folded', { 'fg': 'gray', 'bg': 'selection' })
 call Lk('FoldColumn', 'NormalNC')
 call Lk('ColorColumn', 'CursorColumn')
 call Lk('SignColumn', 'LineNr')
-call Hl('WinSeparator', { 'fg': 'foreground' })
-call Hl('VertSplit', { 'fg': 'background' })
+call Hl('WinSeparator', { 'fg': 'float_background', 'bg': 'float_background' })
 call Lk('VertSplit', 'WinSeparator')
 call Lk('FloatBorder', 'WinSeparator')
 call Hl('SpellBad', { 'sp': 'error', 'undercurl': s:true })
@@ -171,7 +170,7 @@ call Hl('Boolean', { 'fg': 'purple' })
 call Hl('Float', { 'fg': 'purple' })
 call Hl('Identifier', { 'fg': 'blue' })
 call Hl('Variable', { 'fg': 'foreground' })
-call Hl('Function', { 'fg': 'cyan' })
+call Hl('Function', { 'fg': 'magenta' })
 call Hl('Conditional', { 'fg': 'orange'})
 call Hl('Repeat', { 'fg': 'orange'})
 call Hl('Label', { 'fg': 'blue'})
@@ -308,8 +307,8 @@ if has('nvim')
   call Lk('NvimTreeRootFolder', 'Directory')
   call Lk('NvimTreeFolderIcon', 'Directory')
   call Hl('NvimTreeIndentMarker', { 'fg': 'foreground' })
-  call Lk('NvimTreeNormal', 'Normal')
-  call Lk('NvimTreeNormalNC', 'Normal')
+  call Lk('NvimTreeNormal', 'NormalFloat')
+  call Lk('NvimTreeNormalNC', 'NormalFloat')
   call Lk('NvimTreeWinSeparator', 'WinSeparator')
   call Hl('NvimTreeFolderName', { 'fg': 'foreground' })
   call Hl('NvimTreeOpenedFolderName', { 'fg': 'orange', 'bold': s:true })
@@ -374,6 +373,9 @@ if has('nvim')
   call Lk('NotifyINFOTitle', 'NotifyINFOBorder')
   call Lk('NotifyDEBUGTitle', 'NotifyDEBUGBorder')
   call Lk('NotifyTRACETitle', 'NotifyTRACEBorder')
+
+  " nvim-telescope/telescope.nvim
+  call Lk('TelescopeBorder', 'WinSeparator')
 else
   " sheerun/vim-polyglot
 

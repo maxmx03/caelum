@@ -1,6 +1,5 @@
 local colors = {
-	background = "#1F1F1F",
-  background_alt = '#3F3F3F',
+	background = "#22211E",
 	foreground = "#CABEAC",
 	green = "#7B8F5A",
 	yellow = "#DCC68D",
