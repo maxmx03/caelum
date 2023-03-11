@@ -19,7 +19,7 @@ for neovim users
 
 ## Installation 💻
 
-**Vim**
+**VimScript**
 ```vim
 " vim-plug
 call plug#begin()
@@ -35,7 +35,7 @@ set background=dark
 colorscheme caelum
 ```
 
-**Neovim**
+**Lua**
 ```lua
 -- init.lua
 vim.o.termguicolors = true
@@ -49,6 +49,7 @@ use 'maxmx03/caelum'
 
 ## Customize 🖌️
 
+**VimScript**
 ```vim
 " Set transparency
 let g:caelum_transparent = 1
@@ -67,6 +68,7 @@ let g:caelum_variable_italic = 1
 let g:caelum_variable_bold = 1
 ```
 
+**Lua**
 ```lua
 -- Set transparency
 vim.g.caelum_transparent = 1
