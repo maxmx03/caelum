@@ -482,6 +482,7 @@ endif
 
 if exists('g:caelum_transparent') && g:caelum_transparent
   call Hl('Normal', { 'fg': 'foreground' })
+  call Hl('LineNr', { 'fg': 'gray' })
 endif
 
 call ApplyCaelumCustomHl('function')
