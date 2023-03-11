@@ -47,6 +47,44 @@ vim.o.background = 'dark'
 use 'maxmx03/caelum'
 ```
 
+## Customize 🖌️
+
+```vim
+" Set transparency
+let g:caelum_transparent = 1
+
+" Set italic or bold for function, keyword, comment, and variable
+let g:caelum_function_italic = 1
+let g:caelum_function_bold = 1
+
+let g:caelum_keyword_italic = 1
+let g:caelum_keyword_bold = 1
+
+let g:caelum_comment_italic = 1
+let g:caelum_comment_bold = 1
+
+let g:caelum_variable_italic = 1
+let g:caelum_variable_bold = 1
+```
+
+```lua
+-- Set transparency
+vim.g.caelum_transparent = 1
+
+-- Set italic or bold for function, keyword, comment, and variable
+vim.g.caelum_function_italic = true
+vim.g.caelum_function_bold = true
+
+vim.g.caelum_keyword_italic = true
+vim.g.caelum_keyword_bold = true
+
+vim.g.caelum_comment_italic = true
+vim.g.caelum_comment_bold = true
+
+vim.g.caelum_variable_italic = true
+vim.g.caelum_variable_bold = true
+```
+
 ## Why use Caelum 🤔
 
 When it comes to Vim colorschemes, there are a lot of options out there. However, many of them are outdated or lack support for the latest version of Vim. 

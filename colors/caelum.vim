@@ -31,6 +31,9 @@ let s:colors = {
       \ 'delete':                   '#de6464',
       \ }
 
+let s:true = 1
+let s:false = 0
+
 function! Hl(group, options)
   let cmd = 'hi! ' . a:group
 
@@ -44,6 +47,8 @@ function! Hl(group, options)
     else
       let cmd .= ' guibg=' . s:colors[a:options.bg]
     endif
+  else
+    let cmd .= ' guibg=NONE'
   endif
 
   if has_key(a:options, 'reverse')
@@ -54,15 +59,23 @@ function! Hl(group, options)
     endif
   endif
 
-  if has_key(a:options, 'bold')
+  if has_key(a:options, 'bold') && has_key(a:options, 'italic')
+    if a:options.bold && a:options.italic
+      let cmd .= ' gui=bold,italic'
+    elseif a:options.bold
+      let cmd .= ' gui=bold'
+    elseif a:options.italic
+      let cmd .= ' gui=italic'
+    else
+      let cmd .= ' gui=NONE'
+    endif
+  elseif has_key(a:options, 'bold')
     if a:options.bold
       let cmd .= ' gui=bold'
     else
       let cmd .= ' gui=NONE'
     endif
-  endif
-
-  if has_key(a:options, 'italic')
+  elseif has_key(a:options, 'italic')
     if a:options.italic
       let cmd .= ' gui=italic'
     else
@@ -105,11 +118,26 @@ function! Lk(group, target)
   exe 'hi! link ' . a:group . ' ' . a:target
 endfunction
 
-let s:true = 1
-let s:false = 0
+function! ApplyCaelumCustomHl(group)
+  let hl_options = {}
+  let group_name = substitute(a:group, '\<\w\>', '\u\0', 'g')
+  if exists('g:caelum_' . a:group . '_italic')
+    let hl_options['italic'] = v:true
+  endif
+  if exists('g:caelum_' . a:group . '_bold')
+    let hl_options['bold'] = v:true
+  endif
+  if exists('g:caelum_' . a:group . '_fg')
+    let hl_options['fg'] = g:caelum_ . a:group . '_fg'
+  endif
+  if exists('g:caelum_' . a:group . '_bg')
+    let hl_options['bg'] = g:caelum_ . a:group . '_bg'
+  endif
+  call Hl(group_name, hl_options)
+endfunction
 
 " Editor
-call Hl('Normal', { 'fg': 'foreground', 'bg': 'background'})
+call Hl('Normal', { 'fg': 'foreground', 'bg': 'background' })
 call Lk('NormalNC', 'Normal')
 call Hl('NormalFloat', { 'fg': 'foreground', 'bg': 'float_background' })
 call Hl('Cursor', { 'fg': 'background', 'bg': 'foreground' })
@@ -118,10 +146,10 @@ call Hl('CursorLine', { 'bg': 'selection', 'sp': 'foreground' })
 call Lk('CursorColumn', 'CursorLine')
 call Hl('CursorLineNr', { 'fg': 'foreground', 'bg': 'background' })
 call Hl('LineNr', { 'fg': 'gray', 'bg': 'background' })
-call Hl('DiffText', { 'fg': 'blue', 'reverse': 1 })
-call Hl('DiffAdd', { 'fg': 'green', 'reverse': 1 })
-call Hl('DiffChange', { 'fg': 'orange', 'reverse': 1 })
-call Hl('DiffDelete', { 'fg': 'red', 'reverse': 1 })
+call Hl('DiffText', { 'fg': 'blue', 'reverse': s:true })
+call Hl('DiffAdd', { 'fg': 'green', 'reverse': s:true })
+call Hl('DiffChange', { 'fg': 'orange', 'reverse': s:true })
+call Hl('DiffDelete', { 'fg': 'red', 'reverse': s:true })
 call Hl('Pmenu', { 'fg': 'foreground', 'bg': 'background' })
 call Hl('PmenuSel', { 'bg': 'selection' })
 call Hl('PmenuSbar', { 'bg': 'background' })
@@ -162,7 +190,7 @@ call Hl('NonText', { 'fg': 'foreground', 'bg': 'background' })
 call Hl('EndOfBuffer', { 'fg': 'background' })
 
 " Code
-call Hl('Comment', { 'fg': 'gray', 'italic': 1 })
+call Hl('Comment', { 'fg': 'gray', 'italic': s:true })
 call Hl('Constant', { 'fg': 'purple' })
 call Hl('String', { 'fg': 'green' })
 call Hl('Number', { 'fg': 'purple' })
@@ -176,7 +204,7 @@ call Hl('Repeat', { 'fg': 'orange'})
 call Hl('Label', { 'fg': 'blue'})
 call Hl('Operator', { 'fg': 'orange'})
 call Hl('Statement', { 'fg': 'orange'})
-call Hl('Keyword', { 'fg': 'orange'})
+call Hl('Keyword', { 'fg': 'orange' })
 call Hl('Exception', { 'fg': 'orange'})
 call Hl('PreProc', { 'fg': 'orange'})
 call Hl('Define', { 'fg': 'orange'})
@@ -450,3 +478,12 @@ if has('nvim')
   call Hl('WhichKeySeparator', { 'fg': 'purple' })
   call Hl('WhichKeyDesc', { 'fg': 'foreground' })
 endif
+
+if exists('g:caelum_transparent') && g:caelum_transparent
+  call Hl('Normal', { 'fg': 'foreground' })
+endif
+
+call ApplyCaelumCustomHl('function')
+call ApplyCaelumCustomHl('keyword')
+call ApplyCaelumCustomHl('comment')
+call ApplyCaelumCustomHl('variable')
