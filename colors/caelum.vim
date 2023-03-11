@@ -133,7 +133,7 @@ call Hl('MsgSeparator', { 'fg': 'foreground', 'bg': 'background', 'bold': s:true
 call Hl('MoreMsg', { 'fg': 'blue' })
 call Hl('WarningMsg', { 'fg': 'warn' })
 call Hl('ErrorMsg', { 'fg': 'error', 'bg': 'background', 'bold': s:true })
-call Hl('MatchParen', { 'fg': 'orange',  'bold': s:true })
+call Hl('MatchParen', { 'fg': 'yellow', 'bg': 'background', 'bold': s:true })
 call Hl('Tabline', { 'fg': 'foreground', 'bg': 'background' })
 call Hl('Tablinefill', { 'fg': 'background' })
 call Hl('Tablinesel', { 'fg': 'foreground', 'bg': 'background' })
@@ -201,6 +201,73 @@ call Hl('Todo', { 'fg': 'background', 'bg': 'info', 'bold': s:true })
 call Lk('Conceal', 'Keyword')
 call Lk('SpecialKey', 'Special')
 call Lk('Substitute', 'IncSearch')
+
+" javascript
+call Lk('jsFuncCall', 'Function')
+call Lk('jsFunction', 'Keyword')
+call Lk('jsArrowFunction', 'Keyword')
+call Lk('jsPrototype', 'Keyword')
+call Lk('jsClassDefinition', 'Identifier')
+call Lk('jsObjectValue', 'Identifier')
+call Lk('jsObjectKey', 'Identifier')
+
+" typescript
+call Lk('typescriptImport', 'Keyword')
+call Lk('typescriptBraces', 'Delimiter')
+call Lk('typescriptVariable', 'Keyword')
+call Lk('typescriptMember', 'Function')
+call Lk('typescriptIdentifier', 'Constant')
+call Hl('typescriptIdentifierName', { 'fg': 'blue' })
+call Lk('typescriptInterfaceName', 'Type')
+call Lk('typescriptAliasDeclaration', 'Type')
+call Lk('typescriptEndColons', 'Delimiter')
+call Lk('typescriptGlobal', 'Constant')
+call Lk('typescriptConsoleMethod', 'Function')
+call Lk('typescriptOperator', 'Operator')
+call Lk('typescriptClassName', 'Type')
+call Lk('typescriptProp', 'Function')
+
+" html
+call Lk('htmlTagName', 'Tag')
+call Lk('htmlTag', 'Delimiter')
+call Lk('htmlEndTag', 'Delimiter')
+call Hl('htmlLink', { 'fg': 'magenta' })
+call Lk('htmlSpecialTagName', 'Tag')
+call Lk('htmlScriptTag', 'Tag')
+
+" css
+call Hl('cssAttr', {'fg': 'magenta'})
+call Hl('cssUrl', { 'fg': 'magenta' })
+call Lk('cssTagName', 'Tag')
+call Lk('cssProp', 'Identifier')
+call Lk('cssUnitDecorators', 'String')
+
+" javascriptreact
+call Lk('jsxTagName', 'Tag')
+call Lk('jsxTag', 'Delimiter')
+call Lk('jsxCloseString', 'Delimiter')
+
+" vimscript
+call Lk('vimFunc', 'Function')
+call Lk('vimUserFunc', 'Function')
+call Lk('vimVar', 'Variable')
+call Lk('vimOption', 'Constant')
+
+" lua
+call Lk('luaLocal', 'Keyword')
+call Lk('luaFuncKeyword', 'Keyword')
+call Lk('luaFunc', 'Function')
+call Lk('luaBuiltin', 'Constant')
+call Lk('luaTable', 'Identifier')
+call Lk('luaGoto', 'Keyword')
+
+" airblade/vim-gitgutter
+call Hl('GitSignsAdd', { 'fg': 'add', 'bg': 'background' })
+call Hl('GitSignsChange', { 'fg': 'change', 'bg': 'background' })
+call Hl('GitSignsDelete', { 'fg': 'delete', 'bg': 'background' })
+call Hl('GitGutterAdd', { 'fg': 'add', 'bg': 'background' })
+call Hl('GitGutterChange', { 'fg': 'change', 'bg': 'background' })
+call Hl('GitGutterDelete', { 'zfg': 'delete', 'bg': 'background' })
 
 if has('nvim')
   " nvim-treesitter/nvim-treesitter
@@ -382,73 +449,4 @@ if has('nvim')
   call Hl('WhichKeyValue', { 'fg': 'purple' })
   call Hl('WhichKeySeparator', { 'fg': 'purple' })
   call Hl('WhichKeyDesc', { 'fg': 'foreground' })
-else
-  " sheerun/vim-polyglot
-
-  " javascript
-  call Lk('jsFuncCall', 'Function')
-  call Lk('jsFunction', 'Keyword')
-  call Lk('jsArrowFunction', 'Keyword')
-  call Lk('jsPrototype', 'Keyword')
-  call Lk('jsClassDefinition', 'Identifier')
-  call Lk('jsObjectValue', 'Identifier')
-  call Lk('jsObjectKey', 'Identifier')
-
-  " typescript
-  call Lk('typescriptImport', 'Keyword')
-  call Lk('typescriptBraces', 'Delimiter')
-  call Lk('typescriptVariable', 'Keyword')
-  call Lk('typescriptMember', 'Function')
-  call Lk('typescriptIdentifier', 'Constant')
-  call Hl('typescriptIdentifierName', { 'fg': 'blue' })
-  call Lk('typescriptInterfaceName', 'Type')
-  call Lk('typescriptAliasDeclaration', 'Type')
-  call Lk('typescriptEndColons', 'Delimiter')
-  call Lk('typescriptGlobal', 'Constant')
-  call Lk('typescriptConsoleMethod', 'Function')
-  call Lk('typescriptOperator', 'Operator')
-  call Lk('typescriptClassName', 'Type')
-  call Lk('typescriptProp', 'Function')
-
-  " html
-  call Lk('htmlTagName', 'Tag')
-  call Lk('htmlTag', 'Delimiter')
-  call Lk('htmlEndTag', 'Delimiter')
-  call Lk('htmlLink', 'magenta')
-  call Lk('htmlSpecialTagName', 'Tag')
-  call Lk('htmlScriptTag', 'Tag')
-
-  " css
-  call Hl('cssAttr', {'fg': 'magenta'})
-  call Hl('cssUrl', { 'fg': 'magenta' })
-  call Lk('cssTagName', 'Tag')
-  call Lk('cssProp', 'Identifier')
-  call Lk('cssUnitDecorators', 'String')
-
-  " javascriptreact
-  call Lk('jsxTagName', 'Tag')
-  call Lk('jsxTag', 'Delimiter')
-  call Lk('jsxCloseString', 'Delimiter')
-
-  " vimscript
-  call Lk('vimFunc', 'Function')
-  call Lk('vimUserFunc', 'Function')
-  call Lk('vimVar', 'Variable')
-  call Lk('vimOption', 'Constant')
-
-  " lua
-  call Lk('luaLocal', 'Keyword')
-  call Lk('luaFuncKeyword', 'Keyword')
-  call Lk('luaFunc', 'Function')
-  call Lk('luaBuiltin', 'Constant')
-  call Lk('luaTable', 'Identifier')
-  call Lk('luaGoto', 'Keyword')
 endif
-
-" airblade/vim-gitgutter
-call Hl('GitSignsAdd', { 'fg': 'add', 'bg': 'background' })
-call Hl('GitSignsChange', { 'fg': 'change', 'bg': 'background' })
-call Hl('GitSignsDelete', { 'fg': 'delete', 'bg': 'background' })
-call Hl('GitGutterAdd', { 'fg': 'add', 'bg': 'background' })
-call Hl('GitGutterChange', { 'fg': 'change', 'bg': 'background' })
-call Hl('GitGutterDelete', { 'zfg': 'delete', 'bg': 'background' })
