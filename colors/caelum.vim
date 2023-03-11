@@ -470,6 +470,7 @@ if has('nvim')
   call Lk('NotifyTRACETitle', 'NotifyTRACEBorder')
 
   " nvim-telescope/telescope.nvim
+  call Lk('TelescopeNormal', 'NormalFloat')
   call Lk('TelescopeBorder', 'WinSeparator')
 
   " folke/which-key.nvim
