@@ -479,6 +479,9 @@ if has('nvim')
   call Hl('WhichKeyValue', { 'fg': 'purple' })
   call Hl('WhichKeySeparator', { 'fg': 'purple' })
   call Hl('WhichKeyDesc', { 'fg': 'foreground' })
+
+  " glepnir/lspsaga.nvim
+  call Lk('SagaNormal', 'NormalFloat')
 endif
 
 if exists('g:caelum_transparent') && g:caelum_transparent
