@@ -5,8 +5,7 @@ Caelum is a Vim colorscheme inspired by the rich colors and intricate designs fo
 
 ## Preview 👀
 
-![Captura de tela de 2023-03-08 10-13-32](https://user-images.githubusercontent.com/50273941/223722348-9a8172b7-844e-4cc0-a76f-d695e25b0923.png)
-
+![Frame 1](https://user-images.githubusercontent.com/50273941/224550012-9093e8c6-be42-4af6-8d46-587fa6504d72.png)
 
 ## Requirements 🛠️
 
