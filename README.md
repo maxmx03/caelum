@@ -29,17 +29,13 @@ call plug#end()
 
 ```vim
 " .vimrc
-set termguicolors
-set background=dark
-
-colorscheme caelum
+colorscheme caelum " or caelum-light
 ```
 
 **Lua**
 ```lua
 -- init.lua
-vim.o.termguicolors = true
-vim.o.background = 'dark'
+vim.cmd 'colorscheme caelum' -- or caelum-light
 ```
 
 ```lua

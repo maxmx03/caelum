@@ -1,8 +1,8 @@
 local colors = {
-	background = "#22211E",
-	foreground = "#DCC68D",
+	background = "#eee8b9",
+	foreground = "#514934",
 	green = "#7B8F5A",
-	yellow = "#FFCF62",
+	yellow = "#BB9644",
 	blue = "#677FA3",
 	red = "#de6464",
 	orange = "#E58538",
@@ -10,7 +10,7 @@ local colors = {
 	magenta = "#D885A3",
 }
 
-local caelum = {
+local caelum_light = {
 	normal = {
 		a = { bg = colors.background, fg = colors.blue, gui = "bold" },
 		b = { fg = colors.background, bg = colors.blue },
@@ -34,4 +34,4 @@ local caelum = {
 	},
 }
 
-return caelum
+return caelum_light

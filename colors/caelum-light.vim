@@ -1,3 +1,4 @@
+
 if exists('s:colors_name') 
   hi clear
 endif
@@ -7,16 +8,16 @@ if exists('g:syntax_on')
 endif
 
 set termguicolors
-set background=dark
-let s:colors_name = 'caelum'
+set background=light
+let s:colors_name = 'caelum-light'
 
 let s:colors = {
-      \ 'background':               '#22211E',
-      \ 'float_background':         '#1f1e1b',
-      \ 'foreground':               '#DCC68D',
-      \ 'selection':                '#3a3833',
+      \ 'background':               '#eee8b9',
+      \ 'float_background':         '#ece5b0',
+      \ 'foreground':               '#514934',
+      \ 'selection':                '#f2edc9',
       \ 'green':                    '#7B8F5A',
-      \ 'yellow':                   '#FFCF62',
+      \ 'yellow':                   '#BB9644',
       \ 'blue':                     '#677FA3',
       \ 'gray':                     '#57554d',
       \ 'red':                      '#de6464',
@@ -24,11 +25,11 @@ let s:colors = {
       \ 'purple':                   '#7B77A0',
       \ 'magenta':                  '#D885A3',
       \ 'info':                     '#5B8F5A',
-      \ 'hint':                     '#FFCF62',
+      \ 'hint':                     '#BB9644',
       \ 'warn':                     '#E58538',
       \ 'error':                    '#de6464',
       \ 'add':                      '#7B8F5A',
-      \ 'change':                   '#FFCF62',
+      \ 'change':                   '#BB9644',
       \ 'delete':                   '#de6464',
       \ }
 
