@@ -471,7 +471,7 @@ if has('nvim')
   " nvim-telescope/telescope.nvim
   call Lk('TelescopeNormal', 'NormalFloat')
   call Lk('TelescopeBorder', 'WinSeparator')
-  call Lk('TelescopePromptCounter', 'Title')
+  call Lk('TelescopeSelectionCaret', 'Keyword')
 
   " folke/which-key.nvim
   call Hl('WhichKey', { 'fg': 'blue' })
