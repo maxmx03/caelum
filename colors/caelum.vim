@@ -482,6 +482,9 @@ if has('nvim')
 
   " glepnir/lspsaga.nvim
   call Lk('SagaNormal', 'NormalFloat')
+
+  " rcarriga/nvim-dap-ui
+  call Lk('DapUINormal', 'NormalFloat')
 endif
 
 if exists('g:caelum_transparent') && g:caelum_transparent
