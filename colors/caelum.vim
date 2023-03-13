@@ -122,18 +122,15 @@ endfunction
 function! ApplyCaelumCustomHl(group)
   let hl_options = {}
   let group_name = substitute(a:group, '\<\w\>', '\u\0', 'g')
+
   if exists('g:caelum_' . a:group . '_italic')
     let hl_options['italic'] = v:true
   endif
+
   if exists('g:caelum_' . a:group . '_bold')
     let hl_options['bold'] = v:true
   endif
-  if exists('g:caelum_' . a:group . '_fg')
-    let hl_options['fg'] = g:caelum_ . a:group . '_fg'
-  endif
-  if exists('g:caelum_' . a:group . '_bg')
-    let hl_options['bg'] = g:caelum_ . a:group . '_bg'
-  endif
+
   call Hl(group_name, hl_options)
 endfunction
 
@@ -473,6 +470,7 @@ if has('nvim')
   " nvim-telescope/telescope.nvim
   call Lk('TelescopeNormal', 'NormalFloat')
   call Lk('TelescopeBorder', 'WinSeparator')
+  call Lk('TelescopePromptCounter', 'Title')
 
   " folke/which-key.nvim
   call Hl('WhichKey', { 'fg': 'blue' })
