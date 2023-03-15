@@ -483,6 +483,12 @@ if has('nvim')
 
   " rcarriga/nvim-dap-ui
   call Lk('DapUINormal', 'NormalFloat')
+
+  " glepnir/dashboard-nvim
+  call Lk('DashboardHeader', 'Title')
+  call Lk('DashboardDesc', 'String')
+  call Lk('DashboardKey', 'Keyword')
+  call Hl('DashboardFooter', { 'fg': 'purple' })
 endif
 
 if exists('g:caelum_transparent') && g:caelum_transparent
