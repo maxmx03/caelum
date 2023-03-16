@@ -487,9 +487,20 @@ if has('nvim')
 
   " glepnir/dashboard-nvim
   call Lk('DashboardHeader', 'Title')
-  call Lk('DashboardDesc', 'String')
-  call Lk('DashboardKey', 'Keyword')
   call Hl('DashboardFooter', { 'fg': 'purple' })
+
+  call Hl('DashboardProjectTitle', { 'fg': 'yellow' })
+  call Hl('DashboardProjectTitleIcon', { 'fg': 'yellow' })
+  call Hl('DashboardProjectIcon', { 'fg': 'orange' })
+  call Hl('DashboardMruTitle', { 'fg': 'yellow' })
+  call Hl('DashboardMruIcon', { 'fg': 'yellow' })
+  call Hl('DashboardFiles', { 'fg': 'foreground' })
+  call Hl('DashboardShotCutIcon', { 'fg': 'yellow' })
+
+  call Hl('DashboardDec', { 'fg': 'foreground' })
+  call Hl('DashboardKey', { 'fg': 'blue' })
+  call Hl('DashboardIcon', { 'fg': 'purple' })
+  call Hl('DashboardShotCut', { 'fg': 'blue' })
 endif
 
 if exists('g:caelum_transparent') && g:caelum_transparent
