@@ -513,3 +513,9 @@ call ApplyCaelumCustomHl('function')
 call ApplyCaelumCustomHl('keyword')
 call ApplyCaelumCustomHl('comment')
 call ApplyCaelumCustomHl('variable')
+
+if has('nvim')
+lua << EOF
+require 'caelum.autocmd'
+EOF
+endif
