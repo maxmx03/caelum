@@ -501,6 +501,13 @@ if has('nvim')
   call Hl('DashboardKey', { 'fg': 'blue' })
   call Hl('DashboardIcon', { 'fg': 'purple' })
   call Hl('DashboardShotCut', { 'fg': 'blue' })
+
+  " Semantic Highlight
+  call Lk('@lsp.type.parameter', '@parameter')
+  call Hl('@lsp.typemod.parameter.readyonly', { 'italic': s:true })
+  call Lk('@lsp.typemod.variable.readonly', '@variable.builtin')
+  call Lk('@lsp.typemod.variable.defaultLibrary.typescript', '@variable.builtin')
+  call Lk('@lsp.type.class', '@type')
 endif
 
 if exists('g:caelum_transparent') && g:caelum_transparent
@@ -512,9 +519,3 @@ call ApplyCaelumCustomHl('function')
 call ApplyCaelumCustomHl('keyword')
 call ApplyCaelumCustomHl('comment')
 call ApplyCaelumCustomHl('variable')
-
-if has('nvim')
-lua << EOF
-require 'caelum.autocmd'
-EOF
-endif
